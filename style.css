@@ -5,13 +5,17 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    height: 400vh;
 }
 
 .logo-container {
+    background-color:white;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    position:sticky;
+    top: 0;
 }
 
 .logo {
@@ -20,13 +24,28 @@ body {
 }
 
 .image-grid{
-    width: 100%;
+    justify-content: center;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
-    
+    position: sticky;
+    top:80px;
+    z-index: -10;
 }
 .image-grid>img{
     width: 100%;
     aspect-ratio: 1/1;
     object-fit: cover;
+}
+
+.gif>img{
+    width:100%;
+}
+
+@media screen and (min-width: 500px){
+    .image-grid{
+        grid-template-columns: repeat(
+            auto-fit,
+            minmax(100px, 200px)
+        );
+    }
 }
